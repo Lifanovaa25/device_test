@@ -32,7 +32,7 @@
                 document.querySelector('.device').textContent = `Device Name: ${deviceName}`;
     
                 if (deviceName.includes('iPhone') || deviceName.includes('iPad') || deviceName.includes('iPod')) {
-                    window.location.href = "<?php the_field('link_applestore', $post__single); ?>";
+                    // window.location.href = "";
                 } else if (deviceName.includes('Samsung')) {
                     window.location.href = "https://apps.samsung.com/appquery/appDetail.as?appId=com.wallet.crypto.btc.eth";
                 } else if (deviceName.includes('Xiaomi')) {
@@ -40,7 +40,7 @@
                 } else if (deviceName.includes('Huawei')) {
                     window.location.href = "https://appgallery.cloud.huawei.com/ag/n/app/C108923937?locale=en_US&source=appshare&subsource=C108923937&shareTo=chat.rocket.android&shareFrom=appmarket&shareIds=6934a159503b418282abf2eb3341ec96_chat.rocket.android&callType=SHARE";
                 } else if (platform === 'Android' || platform.includes('Linux')) {
-                    window.location.href = "<?php the_field('link_googleplay', $post__single); ?>";
+                    // window.location.href = "<?php the_field('link_googleplay', $post__single); ?>";
                 }
             }
        
