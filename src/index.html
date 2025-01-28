@@ -25,35 +25,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://wurfl.io/wurfl.js"></script>
     <script type="text/javascript">
-      
-      document.addEventListener("DOMContentLoaded", () => {
-    // Получаем данные из WURFL
-    console.log("Device Name:", WURFL.complete_device_name);
-    console.log("Brand Name:", WURFL.brand_name);
-    console.log("Model Name:", WURFL.model_name);
-    console.log("Operating System:", WURFL.os_name);
-    console.log("OS Version:", WURFL.os_version);
-    console.log("Has Touchscreen:", WURFL.has_touchscreen);
-    console.log("Has GPS:", WURFL.has_gps);
-    console.log("Screen Width:", WURFL.screen_width);
-    console.log("Screen Height:", WURFL.screen_height);
-    console.log("Has Camera:", WURFL.has_camera);
-    document.querySelector('.model').textContent = `Device Name: ${WURFL.model_name}`;
-    document.querySelector('.brand').textContent = `Device Name: ${WURFL.brand_name}`;
-
-});
 
         document.addEventListener("DOMContentLoaded", () => {
-            
+            // Получаем данные из WURFL
+            console.log("Device Name:", WURFL.complete_device_name);
+            console.log("Brand Name:", WURFL.brand_name);
+            console.log("Model Name:", WURFL.model_name);
+            console.log("Operating System:", WURFL.os_name);
+            console.log("OS Version:", WURFL.os_version);
+            console.log("Has Touchscreen:", WURFL.has_touchscreen);
+            console.log("Has GPS:", WURFL.has_gps);
+            console.log("Screen Width:", WURFL.screen_width);
+            console.log("Screen Height:", WURFL.screen_height);
+            console.log("Has Camera:", WURFL.has_camera);
+            document.querySelector('.device').textContent = `Operating System:: ${WURFL.os_name}`;
+            document.querySelector('.brand').textContent = `Device Name: ${WURFL.brand_name}`;
+
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+
             if (navigator.platform != null) {
-                
+
                 let platform = navigator.platform;
-                
+
                 // Выводим WURFL.complete_device_name в div.device
                 const deviceName = WURFL.complete_device_name;
-                
-                document.querySelector('.device').textContent = `Device Name: ${deviceName}`;
-    
+
+        
                 if (deviceName.includes('iPhone') || deviceName.includes('iPad') || deviceName.includes('iPod')) {
                     // window.location.href = "";
                 } else if (deviceName.includes('Samsung')) {
@@ -66,12 +65,33 @@
                     // window.location.href = "<?php the_field('link_googleplay', $post__single); ?>";
                 }
             }
-       
+
             console.log(WURFL.complete_device_name);
         });
     </script>
-    
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (navigator.platform != null) {
+            let platform = navigator.platform;
+            document.querySelector('.model').textContent = `Navigator: ${platform}`;
+            document.querySelector('.brend').textContent = `user agent: ${navigator.userAgent}`;
+
+            let iOs = ['iPhone', 'iPad', 'iPod']
+            if (iOs.includes(platform)) {
+                window.location.href = "<?php the_field('link_applestore', $post__single); ?>";
+            } else if (platform.includes("harmonyos")) {
+                window.location.href = "<?php the_field('link_app-gallery', $post__single); ?>";
+            }
+            else if (platform === 'Android' || platform.includes('Linux')) {
+                window.location.href = "<?php the_field('link_googleplay', $post__single); ?>";
+            } else {
+
+            }
+            console.log(navigator.platform)
+        }
+    });
+</script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <!-- select country -->
