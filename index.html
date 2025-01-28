@@ -17,18 +17,41 @@
 </head>
 
 <body>
-    <!-- @@include('blocks/header.html') -->
-    <!-- @@include('blocks/accordion.html') -->
+    
+    
     <div class="device" style="font-weight: 700;"></div>
+    <div class="model" style="font-weight: 700;"></div>
+    <div class="brand"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://wurfl.io/wurfl.js"></script>
     <script type="text/javascript">
+      
+      document.addEventListener("DOMContentLoaded", () => {
+    // Получаем данные из WURFL
+    console.log("Device Name:", WURFL.complete_device_name);
+    console.log("Brand Name:", WURFL.brand_name);
+    console.log("Model Name:", WURFL.model_name);
+    console.log("Operating System:", WURFL.os_name);
+    console.log("OS Version:", WURFL.os_version);
+    console.log("Has Touchscreen:", WURFL.has_touchscreen);
+    console.log("Has GPS:", WURFL.has_gps);
+    console.log("Screen Width:", WURFL.screen_width);
+    console.log("Screen Height:", WURFL.screen_height);
+    console.log("Has Camera:", WURFL.has_camera);
+    document.querySelector('.model').textContent = `Device Name: ${WURFL.model_name}`;
+    document.querySelector('.brand').textContent = `Device Name: ${WURFL.brand_name}`;
+
+});
+
         document.addEventListener("DOMContentLoaded", () => {
+            
             if (navigator.platform != null) {
+                
                 let platform = navigator.platform;
                 
                 // Выводим WURFL.complete_device_name в div.device
                 const deviceName = WURFL.complete_device_name;
+                
                 document.querySelector('.device').textContent = `Device Name: ${deviceName}`;
     
                 if (deviceName.includes('iPhone') || deviceName.includes('iPad') || deviceName.includes('iPod')) {
