@@ -1,0 +1,41 @@
+@use './normalize.scss';
+@use './fonts';
+@use './variables';
+
+@use './blocks/header';
+@use './blocks/accordion';
+@use './customCss.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--Neris);
+    color: var(--color);
+
+}
+
+body {
+    background: var(--bg-gray);
+}
+
+
+.wrapper {
+    max-width: 1170px;
+}
+
+@media (max-width:375px) {
+
+    h3,
+    h3.h3 {
+        font-size: 20px;
+    }
+
+    h2,
+    h2.h2 {
+
+        font-size: 30px;
+        line-height: 150%;
+    }
+}

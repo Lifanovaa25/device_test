@@ -1,0 +1,141 @@
+
+
+.body-content {
+    padding: 25px 0;
+    padding-left: 81px;
+}
+
+ul {
+    margin: 0;
+
+    li {
+        list-style-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.8243 0.179484C11.59 -0.0598279 11.2101 -0.0598279 10.9757 0.179484L3.78737 7.5208L1.02428 4.69895C0.789972 4.45964 0.410097 4.45966 0.175746 4.69895C-0.058582 4.93824 -0.058582 5.32619 0.175746 5.5655L3.3631 8.8206C3.59734 9.05988 3.97749 9.05972 4.21163 8.8206L11.8243 1.04606C12.0586 0.806773 12.0586 0.418795 11.8243 0.179484Z' fill='%231E1E1E' /%3e%3c/svg%3e");
+        padding: 0px 0px 0px 18px;
+    }
+}
+
+
+
+
+.banner-body {
+    z-index: 1;
+}
+
+.banner {
+
+    box-shadow: 10px 10px 40px 0 rgba(30, 30, 30, 0.1);
+
+    width: 100%;
+
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background: url('./../img/bg/dec_top.svg') center center / contain no-repeat;
+        width: 134px;
+        height: 116px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        content: '';
+        background: url('./../img/bg/dec_bottom.svg') center center / contain no-repeat;
+        width: 120px;
+        height: 90px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+
+.banner-title,
+.banner-text {
+    color: var(--color);
+}
+
+.accordion-item-number {
+    color: var(--color);
+    margin-left: -6px;
+}
+
+.list-content {
+    line-height: 162%;
+    color: var(--color);
+}
+
+@media (max-width:992px) {
+    .image_block {
+        order: 1;
+    }
+
+    .content-block {
+        margin-bottom: 50px;
+    }
+
+    .banner {
+        padding: 62px 0 66px 0;
+        max-width: 570px;
+
+        &::before {
+            width: 90px;
+            height: 90px;
+            top: -20px;
+        }
+
+        &::after {
+            bottom: -40px;
+        }
+    }
+}
+
+@media (max-width:375px) {
+
+    .h3,
+    button.h3 {
+
+        font-size: 20px;
+        line-height: 150%;
+
+        padding-right: 0;
+    }
+
+    button.h3 {
+        padding-right: 1rem;
+    }
+
+    .number {
+        padding: 0;
+    }
+
+    .banner {
+        padding: 55px 0 63px 0;
+
+        max-width: 343px;
+
+        // &::before {
+        //     content: '';
+        //     background: url('../../img/bg/banner-bg_m.svg') center center / cover no-repeat;
+        //     max-width: 343px;
+
+        // }
+    }
+
+    .body-content {
+        padding: 20px 0;
+        padding-left: 70px;
+    }
+
+    .banner-title,
+    .banner-text {
+        line-height: 150%;
+    }
+
+    .banner-text {
+        font-size: 16px;
+        line-height: 250%;
+    }
+}
